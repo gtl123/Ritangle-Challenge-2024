@@ -1,8 +1,20 @@
-import sympy as sym
-from IPython.display import display, Math
-from sympy.abc import x
+import inflect
+p = inflect.engine()
 
-polynomial1 = 2*x**3 + x**2 - x
-polynomial2 = x**3 - x**4 - 4*x**2
 
-display(Math('(%s) + (%s) = %s' % (sym.latex(polynomial1), sym.latex(polynomial2), sym.latex(polynomial1+polynomial2))))
+print(p.number_to_words(99).replace("-"," "))
+
+def Calculate_vowels(str):
+    count =  0
+    for vowel in ["a", "e", "i" ,"o", "u"]:
+        count += str.lower().count(vowel)
+    return count
+
+def Word_count(str):
+    return  len(str.split(sep=" "))
+
+
+
+print(Calculate_vowels("Hello People"))
+
+Sentence = "Count Carefully and you will see that this sentence contains words and between them they contain vowels."
