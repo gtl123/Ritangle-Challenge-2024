@@ -1,4 +1,6 @@
 """
+@GAURAV SHUKLA
+Code Notes:
 Solution 1 to Problem 1 in The Ritangle Challenge:
 
 Question:

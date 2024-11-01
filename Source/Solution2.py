@@ -1,4 +1,6 @@
 """
+@GAURAV SHUKLA
+Code Notes:
 "Count carefully and you will see that this sentence contains X words and between them they contain Y vowels."
 valid = (17 + len(X words) + len(Y words)) = X  & vowels(X words + Y words)+31 = Y
 """
