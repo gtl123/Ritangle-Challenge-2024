@@ -11,46 +11,29 @@ for this question the limits are the following
 3 only digits 0 - 9 can be used and only once
 4 All numbers are 2 digits and positive
 5 There are 5 numbers in each list
+
+THIS CODE IS PURPOSELY NOT EFFICIENT RATHER IT IS VERY COMPACT AND PRIORITISES THE LEAST LINES
 """
 
 
 from itertools import permutations
-
-
-def is_arithmetic_sequence(seq):
-    # Check if a sequence is an arithmetic progression.
-    diff = seq[1] - seq[0]
-
-    # [(False if seq[i + 1] - seq[i] != diff else True) for i in range(1, len(seq) - 1)].count(False)
-    for i in range(1, len(seq) - 1):
-        if seq[i + 1] - seq[i] != diff:
-            return False
-    return True
+is_arithmetic_sequence = lambda seq: False if( False in [(False if seq[i + 1] - seq[i] != (seq[1] - seq[0]) else True) for i in range(1, len(seq) - 1)]) else True
 
 
 def form_two_digit_numbers(perm):
-    # Form five two-digit numbers from a permutation of 10 digits.
     nums = []
-    for i in range(0, 10, 2):
-        # Create two-digit number from adjacent digits in the permutation
-        tens = perm[i]
-        ones = perm[i + 1]
-        num = 10 * tens + ones
-        if tens == 0 and ones == 0:  # Skip invalid number 00, but allow 01 to 09
-            return None
-        nums.append(num)
-    # print(f"DEBUG : perm is {perm} result is {nums}")
-    return nums
+    [None if (perm[i] == 0 and perm[i + 1] == 0) else nums.append(10 * perm[i] + perm[i + 1]) for i in range(0, 10, 2)]
+    return  nums
+
 
 
 def sum_arithmetic_sequences():
-    # Sum all valid increasing arithmetic sequences formed from the digits 0 to 9.
     total_sum = 0
     invalid = 0
     non_arethmetic = 0
     digits = list(range(10))  # Digits from 0 to 9
 
-    # Generate all permutations of the digits 0-9
+
     """
     PERMUTATION DEFINITION 
     The total number of permutations of (n) distinct elements (where (n) is a positive integer) is given by: [ P(n) = n! ]
@@ -75,5 +58,5 @@ def sum_arithmetic_sequences():
 
 # Run the algorithm
 result, x, y, a = sum_arithmetic_sequences()
-print(f"Fina Sequences {a}  with {x+y} invalid with {x} invalid due to invalid two-digit numbers and {y} invalid due bieng not arethmatic ")
+print(f"Final Sequences {a}  with {x+y} invalid with {x} invalid due to invalid two-digit numbers and {y} invalid due bieng not arethmatic ")
 print(f"Total sum of valid sequences is {result}")

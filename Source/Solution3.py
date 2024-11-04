@@ -22,4 +22,3 @@ diff = [difference(dates[idx],dates[idx+1]) for idx in range(len(dates)-1)]
 d1,d2 = dates[diff.index(max(diff))] ,dates[diff.index(max(diff))+1]
 print(f"Max difference is {max(diff)} days between {d1} and {d2}")
 print(f"Final Answer is {d1[0]+1}0{d1[1]}{d1[2]}{d2[0]-1}0{d2[1]}{d2[2]}")
-
