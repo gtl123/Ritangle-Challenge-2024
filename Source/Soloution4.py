@@ -3,6 +3,7 @@
 Code Notes:
 product(range(1, 7), repeat=5): Generates every possible sequence of five dice rolls, simulating all outcomes of rolling a six-sided die five times.
 combinations(rolls, 3): From each set of five rolls, it generates all possible unique triplets to check for valid triangle side lengths.
+THIS CODE IS PURPOSELY NOT EFFICIENT RATHER IT IS VERY COMPACT AND PRIORITISES THE LEAST LINES
 """
 from itertools import product, combinations
 valid = lambda a, b, c: (a + b > c) and (a + c > b) and (b + c > a)

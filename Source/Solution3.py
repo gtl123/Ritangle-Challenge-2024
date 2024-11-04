@@ -11,7 +11,8 @@ d is factor mm and mm is a factor of y
 Answer format:
 dmmyyDMMYY where dmmyy is the first non-divisor date in the gap and DMMYY is the last
 or
-divsor date +1  + successive divisor date -1 """
+divsor date +1  + successive divisor date -1
+THIS CODE IS PURPOSELY NOT EFFICIENT RATHER IT IS VERY COMPACT AND PRIORITISES THE LEAST LINES"""
 from datetime import date
 dates = []
 valid_divisor_date = lambda d, mm, yy: True if (1 < d < mm  < yy and mm%d == 0 and yy%mm == 0) else False
