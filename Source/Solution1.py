@@ -18,20 +18,15 @@ THIS CODE IS PURPOSELY NOT EFFICIENT RATHER IT IS VERY COMPACT AND PRIORITISES T
 
 from itertools import permutations
 is_arithmetic_sequence = lambda seq: False if( False in [(False if seq[i + 1] - seq[i] != (seq[1] - seq[0]) else True) for i in range(1, len(seq) - 1)]) else True
-
-
 def form_two_digit_numbers(perm):
     nums = []
     [None if (perm[i] == 0 and perm[i + 1] == 0) else nums.append(10 * perm[i] + perm[i + 1]) for i in range(0, 10, 2)]
     return  nums
-
-
-
 def sum_arithmetic_sequences():
     total_sum = 0
     invalid = 0
     non_arethmetic = 0
-    digits = list(range(10))  # Digits from 0 to 9
+    digits = list(range(10))
 
 
     """
@@ -55,8 +50,6 @@ def sum_arithmetic_sequences():
 
     return total_sum, invalid, non_arethmetic, len(digits)
 
-
-# Run the algorithm
 result, x, y, a = sum_arithmetic_sequences()
 print(f"Final Sequences {a}  with {x+y} invalid with {x} invalid due to invalid two-digit numbers and {y} invalid due bieng not arethmatic ")
 print(f"Total sum of valid sequences is {result}")
